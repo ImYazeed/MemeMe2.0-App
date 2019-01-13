@@ -123,7 +123,6 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
         textField.textAlignment = .center
     }
     
-    
     // MARK: Meme image
     
     func generateMemedImage() -> UIImage {
