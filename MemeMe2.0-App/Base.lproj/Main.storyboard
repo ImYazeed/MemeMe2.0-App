@@ -180,11 +180,11 @@
             </objects>
             <point key="canvasLocation" x="136" y="1063"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="FM4-sQ-Mue">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hp0-fJ-Pot" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" image="tableIcon" selectedImage="tableIcon" id="Adc-F5-lzG"/>
+                    <tabBarItem key="tabBarItem" title="" image="tableIcon" selectedImage="tableIcon" id="Adc-F5-lzG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BfG-7z-xBP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -199,11 +199,11 @@
             </objects>
             <point key="canvasLocation" x="-1962.4000000000001" y="762.36881559220399"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="OaE-GV-jQR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r8V-o5-fgZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" image="collectionIcon" selectedImage="collectionIcon" id="f4H-aa-dUM"/>
+                    <tabBarItem key="tabBarItem" title="" image="collectionIcon" selectedImage="collectionIcon" id="f4H-aa-dUM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="meE-X4-uWN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -84,10 +84,15 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
     }
     
     @IBAction func cancelButton(_ sender: Any) {
+        if originalImage.image == nil {
+            dismiss(animated: true, completion: nil)
+        }
+        else{
         originalImage.image = nil
         configureNavigationBarItems()
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        }
     }
     
     // MARK: imagePickerControllerDelegate
@@ -96,14 +101,13 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             originalImage.image = image
             configureNavigationBarItems()
-            self.imagePickerControllerDidCancel(picker)
+            imagePickerControllerDidCancel(picker)
             
         }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
-        dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func createImagePickerView(withSourceType sourceType:UIImagePickerController.SourceType) {
@@ -117,7 +121,7 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
     
     func configureNavigationBarItems() {
         importButton.isEnabled = (originalImage.image != nil)
-        cancelButton.isEnabled = (originalImage.image != nil)
+        //cancelButton.isEnabled = (originalImage.image != nil)
     }
     
     func configureBars(_ isHidden: Bool) {
