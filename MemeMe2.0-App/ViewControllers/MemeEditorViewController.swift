@@ -22,7 +22,7 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
     
     // Helpers
     let textField_Delegate = TextFieldDelegate()
-    
+    //
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
