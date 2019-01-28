@@ -11,6 +11,12 @@ import UIKit
 
 class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
+    // enum variable to handle the Cancel Action to detrmine weather dismiss the VC or delete the image
+    
+    enum CancelModeEnum {
+       case fromFirstLunch , fromSavedMemes
+    }
+   
     // Outlet
     @IBOutlet weak var originalImage: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -22,7 +28,9 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
     
     // Helpers
     let textField_Delegate = TextFieldDelegate()
-    //
+    
+    //cancel Mode
+    var cancelMode: CancelModeEnum = CancelModeEnum.fromFirstLunch
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
