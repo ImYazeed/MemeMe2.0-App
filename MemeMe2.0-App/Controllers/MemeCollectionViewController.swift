@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCollectionViewController: UIViewController {
+class MemeCollectionViewController: UICollectionViewController {
     
     var memes:[Meme]! {
         let sharedApp = UIApplication.shared
