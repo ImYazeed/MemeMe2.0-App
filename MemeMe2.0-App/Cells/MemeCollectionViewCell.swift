@@ -14,6 +14,7 @@ class MemeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bottomTextField: UILabel!
     @IBOutlet weak var memeImage: UIImageView!
 
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
