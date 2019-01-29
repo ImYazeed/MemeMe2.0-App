@@ -53,8 +53,8 @@ class MemeTableViewController: UITableViewController {
     @IBAction func addNewMeme(_ sender: Any) {
         
         guard let navController = storyboard?.instantiateViewController(withIdentifier: "newMemeNav") as? UINavigationController  else {return}
-        guard let memeEditor = navController.topViewController as? MemeEditorViewController else{return}
-        memeEditor.cancelMode = .fromSavedMemes
+//        guard let memeEditor = navController.topViewController as? MemeEditorViewController else{return}
+//        memeEditor.cancelMode = .fromSavedMemes
         present(navController, animated: true, completion: nil)
     }
 }
