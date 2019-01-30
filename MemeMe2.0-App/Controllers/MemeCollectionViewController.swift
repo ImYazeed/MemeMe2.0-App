@@ -10,19 +10,20 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     var memes:[Meme]! {
         let sharedApp = UIApplication.shared
         let appDelegate = sharedApp.delegate as! AppDelegate
         return appDelegate.memes
     }
     
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Calculate the Cell Size
         let space:CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
@@ -33,6 +34,8 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
+    
+    // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -47,6 +50,8 @@ class MemeCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    // MARK: UICollectionViewDelegate
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Grab the memePreviwerVC from Storyboard
         let memePreviwerVC = self.storyboard!.instantiateViewController(withIdentifier: "memePreviewer") as! MemePreviewer
@@ -58,11 +63,11 @@ class MemeCollectionViewController: UICollectionViewController {
         navigationController!.pushViewController(memePreviwerVC, animated: true)
     }
     
+    // MARK: ACTIONS
+    
     @IBAction func addNewMeme(_ sender: Any) {
         
         guard let navController = storyboard?.instantiateViewController(withIdentifier: "newMemeNav") as? UINavigationController  else {return}
-//        guard let memeEditor = navController.topViewController as? MemeEditorViewController else{return}
-//        memeEditor.cancelMode = .fromSavedMemes
         present(navController, animated: true, completion: nil)
     }
     

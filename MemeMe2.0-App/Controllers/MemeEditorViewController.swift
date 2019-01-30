@@ -11,8 +11,8 @@ import UIKit
 
 class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
-  
-   
+    
+    
     // Outlet
     @IBOutlet weak var originalImage: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -48,9 +48,9 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
         subscribeToKeyboardNotifications()
         
         if let meme = meme {
-        originalImage.image = meme.originalImage
-        topTextField.text = meme.topText
-        bottomTextField.text = meme.bottomText
+            originalImage.image = meme.originalImage
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
         }
         configureNavigationBarItems()
     }
@@ -87,14 +87,17 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
     }
     
     @IBAction func cancelButton(_ sender: Any) {
+        
+        // detrmaine Cancel the image Only or the Cancel the MemeEditorVC
+        
         if originalImage.image == nil {
             dismiss(animated: true, completion: nil)
         }
         else{
-        originalImage.image = nil
-        configureNavigationBarItems()
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+            originalImage.image = nil
+            configureNavigationBarItems()
+            topTextField.text = "TOP"
+            bottomTextField.text = "BOTTOM"
         }
     }
     

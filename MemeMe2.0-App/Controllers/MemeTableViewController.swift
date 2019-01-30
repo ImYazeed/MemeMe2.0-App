@@ -25,6 +25,8 @@ class MemeTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    // MARK: TableViewDataSource
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MemeTableViewCell
         cell.configure(meme: memes[(indexPath as NSIndexPath).row])
@@ -38,6 +40,8 @@ class MemeTableViewController: UITableViewController {
         return memes.count
     }
     
+    // MARK: TableView Delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Grab the memePreviwerVC from Storyboard
         let memePreviwerVC = self.storyboard!.instantiateViewController(withIdentifier: "memePreviewer") as! MemePreviewer
@@ -50,11 +54,11 @@ class MemeTableViewController: UITableViewController {
         
     }
     
+    // MARK: ACTIONS
+    
     @IBAction func addNewMeme(_ sender: Any) {
         
         guard let navController = storyboard?.instantiateViewController(withIdentifier: "newMemeNav") as? UINavigationController  else {return}
-//        guard let memeEditor = navController.topViewController as? MemeEditorViewController else{return}
-//        memeEditor.cancelMode = .fromSavedMemes
         present(navController, animated: true, completion: nil)
     }
 }
